@@ -44,3 +44,11 @@ console.log(evenOdd(5))
 console.log(evenOdd(6))
 console.log(evenOdd(23))
 
+// 3 Validate email
+function reverseString(str) {
+    return str.split('').reverse().join('');
+  }
+
+console.log(reverseString("hello"));
+
+
