@@ -67,7 +67,7 @@ function findLargestNumber(numbers) {
 
   console.log(findLargestNumber([5, 2, 9, 1, 17, 4]));
 
-// Palindrome Checker
+// 5 Palindrome Checker
 
 function isPalindrome(word) {
     const reversed = word.split('').reverse().join('');
