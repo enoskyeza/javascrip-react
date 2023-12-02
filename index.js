@@ -44,11 +44,25 @@ console.log(evenOdd(5))
 console.log(evenOdd(6))
 console.log(evenOdd(23))
 
-// 3 Validate email
+// 3 reverse string
 function reverseString(str) {
     return str.split('').reverse().join('');
   }
 
 console.log(reverseString("hello"));
 
+// 4 largest number in array
+function findLargestNumber(numbers) {
+    if (numbers.length === 0) {
+      return null; // Return null for an empty array
+    }
+    let largest = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+      if (numbers[i] > largest) {
+        largest = numbers[i];
+      }
+    }
+    return largest;
+  }
 
+  console.log(findLargestNumber([5, 2, 9, 1, 17, 4]));
