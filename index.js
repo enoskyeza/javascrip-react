@@ -31,3 +31,24 @@ Title Case a Sentence:
 Write a function that converts the first letter of each word in a sentence to uppercase.
 
 */
+
+// 1
+function addNums(a, b) {
+    return a+b
+}
+console.log(addNums(5, 6))
+
+// 2
+const evenOdd = (num) => (num % 2 === 0) ? "Even" : "Odd"
+console.log(evenOdd(5))
+console.log(evenOdd(6))
+console.log(evenOdd(23))
+
+// 3 Validate email
+function reverseString(str) {
+    return str.split('').reverse().join('');
+  }
+
+console.log(reverseString("hello"));
+
+
