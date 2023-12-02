@@ -31,3 +31,9 @@ Title Case a Sentence:
 Write a function that converts the first letter of each word in a sentence to uppercase.
 
 */
+
+function addNums(a, b) {
+    return a+b
+}
+console.log(addNums(5, 6))
+
