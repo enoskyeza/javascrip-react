@@ -143,3 +143,38 @@ function titleCase(sentence) {
 
 console.log(titleCase("this is a sample sentence"));
 console.log(titleCase("JavaScript is awesome"));
+
+
+/*
+Medium Challenges
+
+Anagram Checker:
+Create a function that checks if two given strings are anagrams of each other.
+
+Array Chunking:
+Write a function that divides an array into smaller arrays of a specified size.
+
+Validate Email:
+Create a function to validate whether a given string is a valid email address.
+
+Flatten Array:
+Write a function that flattens a nested array (e.g., [1, [2, [3]], 4] becomes [1, 2, 3, 4]).
+
+Binary to Decimal Conversion:
+Write a function that converts a binary number to its decimal equivalent.
+
+Debounce Function:
+Implement a debounce function that delays invoking a function after it's called until after a certain amount of time.
+
+Deep Clone an Object:
+Create a function that deeply clones a complex object (including nested objects and arrays).
+
+Implement a Stack:
+Create a stack data structure with push, pop, and peek methods.
+
+Currying Function:
+Implement a currying function that takes a function and some arguments and returns a function that can take further arguments.
+
+Memoization:
+Implement a memoization technique for a recursive function to improve its performance.
+*/
