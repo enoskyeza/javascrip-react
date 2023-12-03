@@ -90,7 +90,7 @@ function countVowels(str) {
 
   console.log(countVowels("Hello World"));
 
-// 7 Fibinacci
+// 7 Fibonacci
 
 function generateFibonacci(n) {
     let sequence = [0, 1];
@@ -100,6 +100,23 @@ function generateFibonacci(n) {
     return sequence.slice(0, n);
   }
 
-  // Example usage:
   console.log(generateFibonacci(5));
   console.log(generateFibonacci(8));
+
+// 8 Factorial
+
+function factorial(number) {
+    if (number === 0 || number === 1) {
+      return 1;
+    } else {
+      let result = 1;
+      for (let i = 2; i <= number; i++) {
+        result *= i;
+      }
+      return result;
+    }
+  }
+
+  console.log(factorial(5));
+  console.log(factorial(0));
+  console.log(factorial(7));
