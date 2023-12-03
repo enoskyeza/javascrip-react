@@ -34,89 +34,101 @@ Write a function that converts the first letter of each word in a sentence to up
 
 // 1
 function addNums(a, b) {
-    return a+b
+  return a + b;
 }
-console.log(addNums(5, 6))
+console.log(addNums(5, 6));
 
 // 2
-const evenOdd = (num) => (num % 2 === 0) ? "Even" : "Odd"
-console.log(evenOdd(5))
-console.log(evenOdd(6))
-console.log(evenOdd(23))
+const evenOdd = (num) => (num % 2 === 0 ? "Even" : "Odd");
+console.log(evenOdd(5));
+console.log(evenOdd(6));
+console.log(evenOdd(23));
 
 // 3 reverse string
 function reverseString(str) {
-    return str.split('').reverse().join('');
-  }
+  return str.split("").reverse().join("");
+}
 
 console.log(reverseString("hello"));
 
 // 4 largest number in array
 function findLargestNumber(numbers) {
-    if (numbers.length === 0) {
-      return null; // Return null for an empty array
-    }
-    let largest = numbers[0];
-    for (let i = 1; i < numbers.length; i++) {
-      if (numbers[i] > largest) {
-        largest = numbers[i];
-      }
-    }
-    return largest;
+  if (numbers.length === 0) {
+    return null; // Return null for an empty array
   }
+  let largest = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > largest) {
+      largest = numbers[i];
+    }
+  }
+  return largest;
+}
 
-  console.log(findLargestNumber([5, 2, 9, 1, 17, 4]));
+console.log(findLargestNumber([5, 2, 9, 1, 17, 4]));
 
 // 5 Palindrome Checker
 
 function isPalindrome(word) {
-    const reversed = word.split('').reverse().join('');
-    return word.toLowerCase() === reversed.toLowerCase();
-  }
+  const reversed = word.split("").reverse().join("");
+  return word.toLowerCase() === reversed.toLowerCase();
+}
 
-  console.log(isPalindrome("racecar"));
+console.log(isPalindrome("racecar"));
 
 // 6 vowel counter
 function countVowels(str) {
-    const vowels = 'aeiouAEIOU';
-    let count = 0;
-    for (let char of str) {
-      if (vowels.includes(char)) {
-        count++;
-      }
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
     }
-    return count;
   }
+  return count;
+}
 
-  console.log(countVowels("Hello World"));
+console.log(countVowels("Hello World"));
 
 // 7 Fibonacci
 
 function generateFibonacci(n) {
-    let sequence = [0, 1];
-    for (let i = 2; i < n; i++) {
-      sequence[i] = sequence[i - 1] + sequence[i - 2];
-    }
-    return sequence.slice(0, n);
+  let sequence = [0, 1];
+  for (let i = 2; i < n; i++) {
+    sequence[i] = sequence[i - 1] + sequence[i - 2];
   }
+  return sequence.slice(0, n);
+}
 
-  console.log(generateFibonacci(5));
-  console.log(generateFibonacci(8));
+console.log(generateFibonacci(5));
+console.log(generateFibonacci(8));
 
 // 8 Factorial
 
 function factorial(number) {
-    if (number === 0 || number === 1) {
-      return 1;
-    } else {
-      let result = 1;
-      for (let i = 2; i <= number; i++) {
-        result *= i;
-      }
-      return result;
+  if (number === 0 || number === 1) {
+    return 1;
+  } else {
+    let result = 1;
+    for (let i = 2; i <= number; i++) {
+      result *= i;
     }
+    return result;
   }
+}
 
-  console.log(factorial(5));
-  console.log(factorial(0));
-  console.log(factorial(7));
+console.log(factorial(5));
+console.log(factorial(0));
+console.log(factorial(7));
+
+// Remove duplicates
+
+function removeDuplicates(arr) {
+  return arr.filter((value, index, array) => array.indexOf(value) === index);
+}
+
+const originalArray = [1, 2, 2, 3, 4, 4, 5];
+console.log(removeDuplicates(originalArray));
+
+const arrayWithDuplicates = ["apple", "banana", "apple", "orange", "banana"];
+console.log(removeDuplicates(arrayWithDuplicates));
