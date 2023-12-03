@@ -144,7 +144,6 @@ function titleCase(sentence) {
 console.log(titleCase("this is a sample sentence"));
 console.log(titleCase("JavaScript is awesome"));
 
-
 /*
 Medium Challenges
 
@@ -178,3 +177,37 @@ Implement a currying function that takes a function and some arguments and retur
 Memoization:
 Implement a memoization technique for a recursive function to improve its performance.
 */
+
+// 1 Anagram checker
+
+function isAnagram(str1, str2) {
+  // Remove non-word characters and convert to lowercase
+  const cleanStr1 = str1.replace(/[^\w]/g, "").toLowerCase();
+  const cleanStr2 = str2.replace(/[^\w]/g, "").toLowerCase();
+
+  // Sort the characters and compare the strings
+  const sortedStr1 = cleanStr1.split("").sort().join("");
+  const sortedStr2 = cleanStr2.split("").sort().join("");
+
+  return sortedStr1 === sortedStr2;
+}
+
+console.log(isAnagram("listen", "silent"));
+console.log(isAnagram("hello", "world"));
+
+// Array Chunking
+
+function chunkArray(arr, size) {
+  const chunkedArr = [];
+  let index = 0;
+
+  while (index < arr.length) {
+    chunkedArr.push(arr.slice(index, index + size));
+    index += size;
+  }
+
+  return chunkedArr;
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5], 2));
+console.log(chunkArray(["a", "b", "c", "d", "e"], 3));
