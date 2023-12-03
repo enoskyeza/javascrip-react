@@ -132,3 +132,14 @@ console.log(removeDuplicates(originalArray));
 
 const arrayWithDuplicates = ["apple", "banana", "apple", "orange", "banana"];
 console.log(removeDuplicates(arrayWithDuplicates));
+
+// Title case a sentence
+
+function titleCase(sentence) {
+  return sentence
+    .toLowerCase()
+    .replace(/(^|\s)\S/g, (char) => char.toUpperCase());
+}
+
+console.log(titleCase("this is a sample sentence"));
+console.log(titleCase("JavaScript is awesome"));
