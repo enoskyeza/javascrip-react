@@ -228,3 +228,12 @@ function flattenArray(arr) {
 
 console.log(flattenArray([1, [2, [3]], 4]));
 console.log(flattenArray([['a', 'b'], 'c', ['d', ['e', 'f']]]));
+
+// Convert binary to decimal
+
+function binaryToDecimal(binary) {
+  return parseInt(binary, 2);
+}
+
+console.log(binaryToDecimal('1010'));
+console.log(binaryToDecimal('110110'));
