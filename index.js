@@ -237,3 +237,83 @@ function binaryToDecimal(binary) {
 
 console.log(binaryToDecimal('1010'));
 console.log(binaryToDecimal('110110'));
+
+// Debounce function
+
+function debounce(func, delay) {
+  let timerId;
+  return function (...args) {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    timerId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
+function searchQuery(query) {
+  console.log(`Searching for: ${query}`);
+}
+
+const debouncedSearch = debounce(searchQuery, 300);
+
+debouncedSearch('JavaScript');
+debouncedSearch('React');
+
+// Deep clone object
+function deepClone(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+    return obj;
+  }
+  let clone = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      clone[key] = deepClone(obj[key]);
+    }
+  }
+  return clone;
+}
+
+const originalObject = {
+  name: 'John',
+  age: 30,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+};
+
+const clonedObject = deepClone(originalObject);
+console.log(clonedObject);
+
+// Implement a stack
+
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  push(element) {
+    this.items.push(element);
+  }
+
+  pop() {
+    if (this.items.length === 0) {
+      return "Underflow";
+    }
+    return this.items.pop();
+  }
+
+  peek() {
+    return this.items[this.items.length - 1];
+  }
+}
+
+const stack = new Stack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+console.log(stack.peek());
+console.log(stack.pop());
