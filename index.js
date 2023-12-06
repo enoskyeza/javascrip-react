@@ -211,3 +211,29 @@ function chunkArray(arr, size) {
 
 console.log(chunkArray([1, 2, 3, 4, 5], 2));
 console.log(chunkArray(["a", "b", "c", "d", "e"], 3));
+
+// Email validation
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
+console.log(validateEmail("test@example.com"));
+console.log(validateEmail("invalid.email@com"));
+
+// Flatten Array
+function flattenArray(arr) {
+  return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val), []);
+}
+
+console.log(flattenArray([1, [2, [3]], 4]));
+console.log(flattenArray([['a', 'b'], 'c', ['d', ['e', 'f']]]));
+
+// Convert binary to decimal
+
+function binaryToDecimal(binary) {
+  return parseInt(binary, 2);
+}
+
+console.log(binaryToDecimal('1010'));
+console.log(binaryToDecimal('110110'));
