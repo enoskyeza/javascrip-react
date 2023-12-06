@@ -310,12 +310,10 @@ class Stack {
   }
 }
 
-// Example usage:
 const stack = new Stack();
 stack.push(10);
 stack.push(20);
 stack.push(30);
 
-console.log(stack.peek()); // Output: 30
-console.log(stack.pop()); // Output: 30
-console.log(stack.pop()); // Output: 20
+console.log(stack.peek());
+console.log(stack.pop());
