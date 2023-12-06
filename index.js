@@ -220,3 +220,11 @@ function validateEmail(email) {
 
 console.log(validateEmail("test@example.com"));
 console.log(validateEmail("invalid.email@com"));
+
+// Flatten Array
+function flattenArray(arr) {
+  return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val), []);
+}
+
+console.log(flattenArray([1, [2, [3]], 4]));
+console.log(flattenArray([['a', 'b'], 'c', ['d', ['e', 'f']]]));
