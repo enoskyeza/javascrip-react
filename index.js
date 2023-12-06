@@ -260,3 +260,5 @@ const debouncedSearch = debounce(searchQuery, 300);
 
 debouncedSearch('JavaScript');
 debouncedSearch('React');
+
+// Deep clone object
