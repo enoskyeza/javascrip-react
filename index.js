@@ -238,7 +238,7 @@ function binaryToDecimal(binary) {
 console.log(binaryToDecimal('1010'));
 console.log(binaryToDecimal('110110'));
 
-// Debounnce function
+// Debounce function
 
 function debounce(func, delay) {
   let timerId;
@@ -252,12 +252,11 @@ function debounce(func, delay) {
   };
 }
 
-// Example usage:
 function searchQuery(query) {
   console.log(`Searching for: ${query}`);
 }
 
 const debouncedSearch = debounce(searchQuery, 300);
 
-debouncedSearch('JavaScript'); // Will be executed after 300ms
-debouncedSearch('React'); // Will override previous call and execute after 300ms from the last call
+debouncedSearch('JavaScript');
+debouncedSearch('React');
