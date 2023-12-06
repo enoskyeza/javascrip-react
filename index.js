@@ -262,3 +262,27 @@ debouncedSearch('JavaScript');
 debouncedSearch('React');
 
 // Deep clone object
+function deepClone(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+    return obj;
+  }
+  let clone = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      clone[key] = deepClone(obj[key]);
+    }
+  }
+  return clone;
+}
+
+const originalObject = {
+  name: 'John',
+  age: 30,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+};
+
+const clonedObject = deepClone(originalObject);
+console.log(clonedObject);
