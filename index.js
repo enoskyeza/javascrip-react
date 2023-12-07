@@ -397,3 +397,39 @@ Write a function that checks the strength of a password based on certain criteri
 Implement your own Promise.all():
 Create a function that mimics the functionality of Promise.all().
 */
+
+//  Implement a promise
+
+class MyPromise {
+  constructor(executor) {
+    this.state = 'pending';
+    this.value = undefined;
+    this.error = undefined;
+    this.thenCallbacks = [];
+    this.catchCallbacks = [];
+
+    const resolve = (value) => {
+      if (this.state === 'pending') {
+        this.state = 'fulfilled';
+        this.value = value;
+        this.thenCallbacks.forEach(callback => callback(this.value));
+      }
+    };
+
+    const reject = (error) => {
+      if (this.state === 'pending') {
+        this.state = 'rejected';
+        this.error = error;
+        this.catchCallbacks.forEach(callback => callback(this.error));
+      }
+    };
+
+    try {
+      executor(resolve, reject);
+    } catch (error) {
+      reject(error);
+    }
+  }
+
+
+}
