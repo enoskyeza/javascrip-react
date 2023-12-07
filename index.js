@@ -440,5 +440,13 @@ class MyPromise {
     return this;
   }
 
-
+  catch(onRejected) {
+    if (this.state === 'rejected') {
+      onRejected(this.error);
+    } else {
+      this.catchCallbacks.push(onRejected);
+    }
+    return this;
+  }
 }
+
