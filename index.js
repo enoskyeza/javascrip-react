@@ -431,5 +431,14 @@ class MyPromise {
     }
   }
 
+  then(onFulfilled) {
+    if (this.state === 'fulfilled') {
+      onFulfilled(this.value);
+    } else {
+      this.thenCallbacks.push(onFulfilled);
+    }
+    return this;
+  }
+
 
 }
