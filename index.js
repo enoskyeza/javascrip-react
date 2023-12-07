@@ -317,3 +317,18 @@ stack.push(30);
 
 console.log(stack.peek());
 console.log(stack.pop());
+
+//  Currying function
+
+function curry(func) {
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      return func.apply(this, args);
+    } else {
+      return function (...nextArgs) {
+        return curried.apply(this, args.concat(nextArgs));
+      };
+    }
+  };
+}
+
