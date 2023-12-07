@@ -340,3 +340,5 @@ function sum(a, b, c) {
 const curriedSum = curry(sum);
 console.log(curriedSum(1)(2)(3));
 console.log(curriedSum(1, 2)(3));
+
+// Memorixzation
