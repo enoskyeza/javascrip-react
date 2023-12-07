@@ -450,3 +450,18 @@ class MyPromise {
   }
 }
 
+// Example usage:
+const promise = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    const randomNumber = Math.random();
+    if (randomNumber < 0.5) {
+      resolve('Success!');
+    } else {
+      reject('Error!');
+    }
+  }, 1000);
+});
+
+promise
+  .then(result => console.log('Resolved:', result))
+  .catch(error => console.log('Rejected:', error));
