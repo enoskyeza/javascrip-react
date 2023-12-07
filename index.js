@@ -363,3 +363,37 @@ function factorial(n) {
 const memoizedFactorial = memoize(factorial);
 console.log(memoizedFactorial(5));
 console.log(memoizedFactorial(5));
+
+
+/*
+Complex Challenges:
+Implement a Promise:
+Create a simplified version of a Promise in JavaScript.
+
+Lazy Evaluation:
+Implement lazy evaluation in JavaScript using closures.
+
+Binary Search Tree:
+Implement a binary search tree data structure with insertion, deletion, and searching functionalities.
+
+Implement a Scheduler:
+Create a scheduler that can execute tasks in a specific order and time.
+
+Functional Programming:
+Implement a function that performs map, filter, and reduce operations without using the built-in functions.
+
+Web Worker:
+Create a web worker that performs a complex task in the background without affecting the main thread.
+
+Create a Custom Observable:
+Implement a simple version of an observable pattern in JavaScript.
+
+Implement a Virtual DOM:
+Create a simplified version of a Virtual DOM and its diffing algorithm.
+
+Password Strength Checker:
+Write a function that checks the strength of a password based on certain criteria (length, special characters, etc.).
+
+Implement your own Promise.all():
+Create a function that mimics the functionality of Promise.all().
+*/
