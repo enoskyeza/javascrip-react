@@ -342,3 +342,13 @@ console.log(curriedSum(1)(2)(3));
 console.log(curriedSum(1, 2)(3));
 
 // Memorixzation
+function memoize(func) {
+  const cache = {};
+  return function (...args) {
+    const key = JSON.stringify(args);
+    if (!cache[key]) {
+      cache[key] = func.apply(this, args);
+    }
+    return cache[key];
+  };
+}
