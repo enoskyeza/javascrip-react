@@ -450,7 +450,6 @@ class MyPromise {
   }
 }
 
-// Example usage:
 const promise = new MyPromise((resolve, reject) => {
   setTimeout(() => {
     const randomNumber = Math.random();
