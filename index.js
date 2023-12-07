@@ -352,3 +352,14 @@ function memoize(func) {
     return cache[key];
   };
 }
+
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+const memoizedFactorial = memoize(factorial);
+console.log(memoizedFactorial(5));
+console.log(memoizedFactorial(5));
