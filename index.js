@@ -464,3 +464,6 @@ const promise = new MyPromise((resolve, reject) => {
 promise
   .then(result => console.log('Resolved:', result))
   .catch(error => console.log('Rejected:', error));
+
+
+// Lazy Evaluation
