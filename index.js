@@ -473,3 +473,10 @@ function lazyEvaluation(expression) {
   };
 }
 
+const delayedValue = lazyEvaluation(() => {
+  console.log('This will be evaluated lazily');
+  return 42;
+});
+
+console.log('Some code before accessing the value');
+
