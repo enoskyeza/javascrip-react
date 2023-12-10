@@ -464,3 +464,23 @@ const promise = new MyPromise((resolve, reject) => {
 promise
   .then(result => console.log('Resolved:', result))
   .catch(error => console.log('Rejected:', error));
+
+
+// Lazy Evaluation
+function lazyEvaluation(expression) {
+  return function () {
+    return expression();
+  };
+}
+
+const delayedValue = lazyEvaluation(() => {
+  console.log('This will be evaluated lazily');
+  return 42;
+});
+
+console.log('Some code before accessing the value');
+
+const result = delayedValue();
+console.log('Result:', result);
+
+
