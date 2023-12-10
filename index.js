@@ -467,3 +467,9 @@ promise
 
 
 // Lazy Evaluation
+function lazyEvaluation(expression) {
+  return function () {
+    return expression();
+  };
+}
+
