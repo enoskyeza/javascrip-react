@@ -484,3 +484,12 @@ const result = delayedValue();
 console.log('Result:', result);
 
 
+// Binary Search Tree
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
