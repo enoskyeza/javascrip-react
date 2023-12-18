@@ -538,3 +538,22 @@ bst.insert(15);
 bst.insert(3);
 bst.insert(7);
 console.log(bst.root);
+
+// Implement a Scheduler:
+class Scheduler {
+  constructor() {
+    this.queue = [];
+    this.running = false;
+  }
+
+  addTask(task, delay) {
+    this.queue.push(() => new Promise((resolve) => {
+      setTimeout(() => {
+        task();
+        resolve();
+      }, delay);
+    }));
+    if (!this.running) {
+      this.execute();
+    }
+  }
