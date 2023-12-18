@@ -604,3 +604,12 @@ function deepClone(obj, hash = new WeakMap()) {
   }
   return clone;
 }
+
+const originalObject = {
+  name: 'John',
+  age: 30,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+};
