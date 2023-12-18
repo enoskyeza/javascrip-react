@@ -484,3 +484,101 @@ const result = delayedValue();
 console.log('Result:', result);
 
 
+// Binary Search Tree
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+    const newNode = new Node(value);
+    if (!this.root) {
+      this.root = newNode;
+      return this;
+    }
+
+    let currentNode = this.root;
+    while (true) {
+      if (value === currentNode.value) {
+        return undefined; // Ignore duplicates (assuming no duplicates allowed)
+      }
+      if (value < currentNode.value) {
+        if (!currentNode.left) {
+          currentNode.left = newNode;
+          return this;
+        }
+        currentNode = currentNode.left;
+      } else {
+        if (!currentNode.right) {
+          currentNode.right = newNode;
+          return this;
+        }
+        currentNode = currentNode.right;
+      }
+    }
+  }
+
+}
+
+
+const bst = new BinarySearchTree();
+bst.insert(10);
+bst.insert(5);
+bst.insert(15);
+bst.insert(3);
+bst.insert(7);
+console.log(bst.root);
+
+// Implement a Scheduler:
+class Scheduler {
+  constructor() {
+    this.queue = [];
+    this.running = false;
+  }
+
+  addTask(task, delay) {
+    this.queue.push(() => new Promise((resolve) => {
+      setTimeout(() => {
+        task();
+        resolve();
+      }, delay);
+    }));
+    if (!this.running) {
+      this.execute();
+    }
+  }
+
+  async execute() {
+    if (this.queue.length > 0) {
+      this.running = true;
+      const currentTask = this.queue.shift();
+      await currentTask();
+      this.execute();
+    } else {
+      this.running = false;
+    }
+  }
+}
+
+const scheduler = new Scheduler();
+
+const task1 = () => {
+  console.log('Task 1 executed');
+};
+
+const task2 = () => {
+  console.log('Task 2 executed');
+};
+
+scheduler.addTask(task1, 2000);
+scheduler.addTask(task2, 1000);
