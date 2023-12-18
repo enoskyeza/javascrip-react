@@ -557,3 +557,15 @@ class Scheduler {
       this.execute();
     }
   }
+
+  async execute() {
+    if (this.queue.length > 0) {
+      this.running = true;
+      const currentTask = this.queue.shift();
+      await currentTask();
+      this.execute();
+    } else {
+      this.running = false;
+    }
+  }
+}
