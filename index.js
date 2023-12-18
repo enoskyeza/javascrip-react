@@ -582,3 +582,25 @@ const task2 = () => {
 
 scheduler.addTask(task1, 2000);
 scheduler.addTask(task2, 1000);
+
+// Deep Clone an Object
+
+function deepClone(obj, hash = new WeakMap()) {
+  if (typeof obj !== 'object' || obj === null) {
+    return obj;
+  }
+
+  if (hash.has(obj)) {
+    return hash.get(obj);
+  }
+
+  let clone = Array.isArray(obj) ? [] : {};
+  hash.set(obj, clone);
+
+  for (let key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      clone[key] = deepClone(obj[key], hash);
+    }
+  }
+  return clone;
+}
