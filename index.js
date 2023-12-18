@@ -530,3 +530,13 @@ class BinarySearchTree {
 
   // Additional methods (e.g., search, remove) can be implemented here
 }
+
+
+// Example usage:
+const bst = new BinarySearchTree();
+bst.insert(10);
+bst.insert(5);
+bst.insert(15);
+bst.insert(3);
+bst.insert(7);
+console.log(bst.root); // Output: The structure of the Binary Search Tree
