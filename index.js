@@ -570,7 +570,6 @@ class Scheduler {
   }
 }
 
-// Example usage:
 const scheduler = new Scheduler();
 
 const task1 = () => {
@@ -581,5 +580,5 @@ const task2 = () => {
   console.log('Task 2 executed');
 };
 
-scheduler.addTask(task1, 2000); // Task 1 will be executed after 2 seconds
-scheduler.addTask(task2, 1000); // Task 2 will be executed after 1 second
+scheduler.addTask(task1, 2000);
+scheduler.addTask(task2, 1000);
