@@ -613,3 +613,6 @@ const originalObject = {
     country: 'USA'
   }
 };
+
+const clonedObject = deepClone(originalObject);
+console.log(clonedObject); // Output: a deep cloned copy of the originalObject
