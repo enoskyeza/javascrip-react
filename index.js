@@ -631,3 +631,13 @@ function customMap(array, callback) {
 const numbers = [1, 2, 3, 4, 5];
 const squaredNumbers = customMap(numbers, (num) => num * num);
 console.log(squaredNumbers);
+
+function customFilter(array, callback) {
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i], i, array)) {
+      result.push(array[i]);
+    }
+  }
+  return result;
+}
