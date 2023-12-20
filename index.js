@@ -605,7 +605,7 @@ function deepClone(obj, hash = new WeakMap()) {
   return clone;
 }
 
-const originalObject = {
+const originalObjectTwo = {
   name: 'John',
   age: 30,
   address: {
@@ -614,5 +614,5 @@ const originalObject = {
   }
 };
 
-const clonedObject = deepClone(originalObject);
-console.log(clonedObject); // Output: a deep cloned copy of the originalObject
+const clonedObjectTwo = deepClone(originalObjectTwo);
+console.log(clonedObjectTwo); // Output: a deep cloned copy of the originalObject
