@@ -642,7 +642,6 @@ function customFilter(array, callback) {
   return result;
 }
 
-// Example usage:
 const testNumbers = [1, 2, 3, 4, 5];
 const evenNumbers = customFilter(testNumbers, (num) => num % 2 === 0);
-console.log(evenNumbers); // Output: [2, 4]
+console.log(evenNumbers);
