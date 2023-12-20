@@ -619,3 +619,12 @@ const clonedObjectTwo = deepClone(originalObjectTwo);
 console.log(clonedObjectTwo); // Output: a deep cloned copy of the originalObject
 
 // Functional Programming
+
+function customMap(array, callback) {
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+    result.push(callback(array[i], i, array));
+  }
+  return result;
+}
+
