@@ -223,11 +223,15 @@ console.log(validateEmail("invalid.email@com"));
 
 // Flatten Array
 function flattenArray(arr) {
-  return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val), []);
+  return arr.reduce(
+    (acc, val) =>
+      Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val),
+    []
+  );
 }
 
 console.log(flattenArray([1, [2, [3]], 4]));
-console.log(flattenArray([['a', 'b'], 'c', ['d', ['e', 'f']]]));
+console.log(flattenArray([["a", "b"], "c", ["d", ["e", "f"]]]));
 
 // Convert binary to decimal
 
@@ -235,8 +239,8 @@ function binaryToDecimal(binary) {
   return parseInt(binary, 2);
 }
 
-console.log(binaryToDecimal('1010'));
-console.log(binaryToDecimal('110110'));
+console.log(binaryToDecimal("1010"));
+console.log(binaryToDecimal("110110"));
 
 // Debounce function
 
@@ -258,12 +262,12 @@ function searchQuery(query) {
 
 const debouncedSearch = debounce(searchQuery, 300);
 
-debouncedSearch('JavaScript');
-debouncedSearch('React');
+debouncedSearch("JavaScript");
+debouncedSearch("React");
 
 // Deep clone object
 function deepClone(obj) {
-  if (typeof obj !== 'object' || obj === null) {
+  if (typeof obj !== "object" || obj === null) {
     return obj;
   }
   let clone = Array.isArray(obj) ? [] : {};
@@ -276,12 +280,12 @@ function deepClone(obj) {
 }
 
 const originalObject = {
-  name: 'John',
+  name: "John",
   age: 30,
   address: {
-    city: 'New York',
-    country: 'USA'
-  }
+    city: "New York",
+    country: "USA",
+  },
 };
 
 const clonedObject = deepClone(originalObject);
@@ -332,7 +336,6 @@ function curry(func) {
   };
 }
 
-
 function sum(a, b, c) {
   return a + b + c;
 }
@@ -363,7 +366,6 @@ function factorial(n) {
 const memoizedFactorial = memoize(factorial);
 console.log(memoizedFactorial(5));
 console.log(memoizedFactorial(5));
-
 
 /*
 Complex Challenges:
@@ -402,25 +404,25 @@ Create a function that mimics the functionality of Promise.all().
 
 class MyPromise {
   constructor(executor) {
-    this.state = 'pending';
+    this.state = "pending";
     this.value = undefined;
     this.error = undefined;
     this.thenCallbacks = [];
     this.catchCallbacks = [];
 
     const resolve = (value) => {
-      if (this.state === 'pending') {
-        this.state = 'fulfilled';
+      if (this.state === "pending") {
+        this.state = "fulfilled";
         this.value = value;
-        this.thenCallbacks.forEach(callback => callback(this.value));
+        this.thenCallbacks.forEach((callback) => callback(this.value));
       }
     };
 
     const reject = (error) => {
-      if (this.state === 'pending') {
-        this.state = 'rejected';
+      if (this.state === "pending") {
+        this.state = "rejected";
         this.error = error;
-        this.catchCallbacks.forEach(callback => callback(this.error));
+        this.catchCallbacks.forEach((callback) => callback(this.error));
       }
     };
 
@@ -432,7 +434,7 @@ class MyPromise {
   }
 
   then(onFulfilled) {
-    if (this.state === 'fulfilled') {
+    if (this.state === "fulfilled") {
       onFulfilled(this.value);
     } else {
       this.thenCallbacks.push(onFulfilled);
@@ -441,7 +443,7 @@ class MyPromise {
   }
 
   catch(onRejected) {
-    if (this.state === 'rejected') {
+    if (this.state === "rejected") {
       onRejected(this.error);
     } else {
       this.catchCallbacks.push(onRejected);
@@ -454,17 +456,16 @@ const promise = new MyPromise((resolve, reject) => {
   setTimeout(() => {
     const randomNumber = Math.random();
     if (randomNumber < 0.5) {
-      resolve('Success!');
+      resolve("Success!");
     } else {
-      reject('Error!');
+      reject("Error!");
     }
   }, 1000);
 });
 
 promise
-  .then(result => console.log('Resolved:', result))
-  .catch(error => console.log('Rejected:', error));
-
+  .then((result) => console.log("Resolved:", result))
+  .catch((error) => console.log("Rejected:", error));
 
 // Lazy Evaluation
 function lazyEvaluation(expression) {
@@ -474,15 +475,14 @@ function lazyEvaluation(expression) {
 }
 
 const delayedValue = lazyEvaluation(() => {
-  console.log('This will be evaluated lazily');
+  console.log("This will be evaluated lazily");
   return 42;
 });
 
-console.log('Some code before accessing the value');
+console.log("Some code before accessing the value");
 
 const result = delayedValue();
-console.log('Result:', result);
-
+console.log("Result:", result);
 
 // Binary Search Tree
 
@@ -493,7 +493,6 @@ class Node {
     this.right = null;
   }
 }
-
 
 class BinarySearchTree {
   constructor() {
@@ -527,9 +526,7 @@ class BinarySearchTree {
       }
     }
   }
-
 }
-
 
 const bst = new BinarySearchTree();
 bst.insert(10);
@@ -540,6 +537,7 @@ bst.insert(7);
 console.log(bst.root);
 
 // Implement a Scheduler:
+
 class Scheduler {
   constructor() {
     this.queue = [];
@@ -547,12 +545,15 @@ class Scheduler {
   }
 
   addTask(task, delay) {
-    this.queue.push(() => new Promise((resolve) => {
-      setTimeout(() => {
-        task();
-        resolve();
-      }, delay);
-    }));
+    this.queue.push(
+      () =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            task();
+            resolve();
+          }, delay);
+        })
+    );
     if (!this.running) {
       this.execute();
     }
@@ -573,11 +574,11 @@ class Scheduler {
 const scheduler = new Scheduler();
 
 const task1 = () => {
-  console.log('Task 1 executed');
+  console.log("Task 1 executed");
 };
 
 const task2 = () => {
-  console.log('Task 2 executed');
+  console.log("Task 2 executed");
 };
 
 scheduler.addTask(task1, 2000);
@@ -586,7 +587,7 @@ scheduler.addTask(task2, 1000);
 // Deep Clone an Object
 
 function deepClone(obj, hash = new WeakMap()) {
-  if (typeof obj !== 'object' || obj === null) {
+  if (typeof obj !== "object" || obj === null) {
     return obj;
   }
 
@@ -606,13 +607,15 @@ function deepClone(obj, hash = new WeakMap()) {
 }
 
 const originalObjectTwo = {
-  name: 'John',
+  name: "John",
   age: 30,
   address: {
-    city: 'New York',
-    country: 'USA'
-  }
+    city: "New York",
+    country: "USA",
+  },
 };
 
 const clonedObjectTwo = deepClone(originalObjectTwo);
 console.log(clonedObjectTwo); // Output: a deep cloned copy of the originalObject
+
+// Functional Programming
