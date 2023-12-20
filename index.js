@@ -645,3 +645,14 @@ function customFilter(array, callback) {
 const testNumbers = [1, 2, 3, 4, 5];
 const evenNumbers = customFilter(testNumbers, (num) => num % 2 === 0);
 console.log(evenNumbers);
+
+function customReduce(array, callback, initialValue) {
+  let accumulator = initialValue === undefined ? array[0] : initialValue;
+  const startIndex = initialValue === undefined ? 1 : 0;
+
+  for (let i = startIndex; i < array.length; i++) {
+    accumulator = callback(accumulator, array[i], i, array);
+  }
+
+  return accumulator;
+}
