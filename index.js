@@ -703,3 +703,9 @@ const observer2 = new Observer('Observer 2');
 
 observable.subscribe(observer1);
 observable.subscribe(observer2);
+
+observable.notify('Hello World!');
+
+observable.unsubscribe(observer2);
+
+observable.notify('How are you?');
