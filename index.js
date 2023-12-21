@@ -677,4 +677,10 @@ class Observable {
     this.observers = this.observers.filter(obs => obs !== observer);
   }
 
+  notify(data) {
+    this.observers.forEach(observer => {
+      observer.update(data);
+    });
+  }
+
 }
