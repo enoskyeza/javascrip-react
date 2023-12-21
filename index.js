@@ -663,3 +663,9 @@ console.log(sum);
 
 // Create a Custom Observable
 // Implement a simple version of an observable pattern in JavaScript.
+
+class Observable {
+  constructor() {
+    this.observers = [];
+  }
+}
