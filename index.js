@@ -709,3 +709,15 @@ observable.notify('Hello World!');
 observable.unsubscribe(observer2);
 
 observable.notify('How are you?');
+
+/*
+Explanation:
+
+Observable is a class that manages observers. It has methods to subscribe, unsubscribe, and notify observers.
+Observer is a class representing the observers that will listen to changes in the observable.
+subscribe method adds an observer to the list of observers.
+unsubscribe method removes an observer from the list of observers.
+notify method notifies all observers when there is a change, passing the data to each observer.
+
+This is a simplified version of the observer pattern in JavaScript. You can further expand it to handle various types of data updates, error handling, and more complex scenarios based on your requirements.
+*/
