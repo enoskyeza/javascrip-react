@@ -684,3 +684,9 @@ class Observable {
   }
 
 }
+
+class Observer {
+  constructor(name) {
+    this.name = name;
+  }
+}
