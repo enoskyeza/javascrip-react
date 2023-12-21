@@ -660,3 +660,6 @@ function customReduce(array, callback, initialValue) {
 const numbersList = [1, 2, 3, 4, 5];
 const sum = customReduce(numbersList, (acc, current) => acc + current, 0);
 console.log(sum);
+
+// Create a Custom Observable
+// Implement a simple version of an observable pattern in JavaScript.
