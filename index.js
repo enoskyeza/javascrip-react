@@ -668,4 +668,8 @@ class Observable {
   constructor() {
     this.observers = [];
   }
+
+  subscribe(observer) {
+    this.observers.push(observer);
+  }
 }
