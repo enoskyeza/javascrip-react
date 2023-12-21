@@ -721,3 +721,5 @@ notify method notifies all observers when there is a change, passing the data to
 
 This is a simplified version of the observer pattern in JavaScript. You can further expand it to handle various types of data updates, error handling, and more complex scenarios based on your requirements.
 */
+
+// Create a custome DOM
