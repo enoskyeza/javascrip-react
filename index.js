@@ -660,3 +660,64 @@ function customReduce(array, callback, initialValue) {
 const numbersList = [1, 2, 3, 4, 5];
 const sum = customReduce(numbersList, (acc, current) => acc + current, 0);
 console.log(sum);
+
+// Create a Custom Observable
+// Implement a simple version of an observable pattern in JavaScript.
+
+class Observable {
+  constructor() {
+    this.observers = [];
+  }
+
+  subscribe(observer) {
+    this.observers.push(observer);
+  }
+
+  unsubscribe(observer) {
+    this.observers = this.observers.filter(obs => obs !== observer);
+  }
+
+  notify(data) {
+    this.observers.forEach(observer => {
+      observer.update(data);
+    });
+  }
+
+}
+
+class Observer {
+  constructor(name) {
+    this.name = name;
+  }
+
+  update(data) {
+    console.log(`${this.name} received: ${data}`);
+  }
+
+}
+
+const observable = new Observable();
+
+const observer1 = new Observer('Observer 1');
+const observer2 = new Observer('Observer 2');
+
+observable.subscribe(observer1);
+observable.subscribe(observer2);
+
+observable.notify('Hello World!');
+
+observable.unsubscribe(observer2);
+
+observable.notify('How are you?');
+
+/*
+Explanation:
+
+Observable is a class that manages observers. It has methods to subscribe, unsubscribe, and notify observers.
+Observer is a class representing the observers that will listen to changes in the observable.
+subscribe method adds an observer to the list of observers.
+unsubscribe method removes an observer from the list of observers.
+notify method notifies all observers when there is a change, passing the data to each observer.
+
+This is a simplified version of the observer pattern in JavaScript. You can further expand it to handle various types of data updates, error handling, and more complex scenarios based on your requirements.
+*/
