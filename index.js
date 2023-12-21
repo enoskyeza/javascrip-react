@@ -695,3 +695,11 @@ class Observer {
   }
 
 }
+
+const observable = new Observable();
+
+const observer1 = new Observer('Observer 1');
+const observer2 = new Observer('Observer 2');
+
+observable.subscribe(observer1);
+observable.subscribe(observer2);
