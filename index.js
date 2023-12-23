@@ -726,3 +726,16 @@ This is a simplified version of the observer pattern in JavaScript. You can furt
 
 // Password Strength Checker:
 // This function checks the strength of a password based on specified criteria, such as length, the presence of uppercase letters, lowercase letters, numbers, and special characters.
+
+
+function checkPasswordStrength(password) {
+  const minLength = 8;
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasLowercase = /[a-z]/.test(password);
+  const hasNumber = /\d/.test(password);
+  const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\|\-]/.test(password);
+
+  const meetsLength = password.length >= minLength;
+  const meetsCriteria = hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
+
+}
