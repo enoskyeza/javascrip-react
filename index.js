@@ -738,6 +738,17 @@ class VNode {
       element.setAttribute(key, value);
     }
 
+    if (Array.isArray(this.children)) {
+      this.children.forEach(child => {
+        if (child instanceof VNode) {
+          element.appendChild(child.render());
+        } else {
+          element.appendChild(document.createTextNode(child));
+        }
+      });
+    }
+
+
     return element;
   }
 }
