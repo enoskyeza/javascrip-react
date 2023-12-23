@@ -738,4 +738,12 @@ function checkPasswordStrength(password) {
   const meetsLength = password.length >= minLength;
   const meetsCriteria = hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
 
+  if (meetsLength && meetsCriteria) {
+    return 'Strong';
+  } else if (meetsLength || meetsCriteria) {
+    return 'Medium';
+  } else {
+    return 'Weak';
+  }
+
 }
