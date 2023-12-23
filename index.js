@@ -747,3 +747,9 @@ function checkPasswordStrength(password) {
   }
 
 }
+
+// Example usage:
+console.log(checkPasswordStrength('Passw0rd!')); // Output: 'Strong'
+console.log(checkPasswordStrength('password123')); // Output: 'Medium'
+console.log(checkPasswordStrength('123456')); // Output: 'Weak'
+
