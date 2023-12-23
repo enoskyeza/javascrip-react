@@ -723,3 +723,6 @@ This is a simplified version of the observer pattern in JavaScript. You can furt
 */
 
 // Create a custome DOM
+
+// Password Strength Checker:
+// This function checks the strength of a password based on specified criteria, such as length, the presence of uppercase letters, lowercase letters, numbers, and special characters.
