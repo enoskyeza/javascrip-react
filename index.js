@@ -730,6 +730,12 @@ class VNode {
     this.props = props;
     this.children = children;
   }
+
+  render() {
+    const element = document.createElement(this.tag);
+
+    return element;
+  }
 }
 
 // Password Strength Checker:
