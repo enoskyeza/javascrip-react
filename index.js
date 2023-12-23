@@ -734,6 +734,10 @@ class VNode {
   render() {
     const element = document.createElement(this.tag);
 
+    for (const [key, value] of Object.entries(this.props)) {
+      element.setAttribute(key, value);
+    }
+
     return element;
   }
 }
