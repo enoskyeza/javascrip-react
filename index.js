@@ -724,6 +724,35 @@ This is a simplified version of the observer pattern in JavaScript. You can furt
 
 // Create a custome DOM
 
+class VNode {
+  constructor(tag, props, children) {
+    this.tag = tag;
+    this.props = props;
+    this.children = children;
+  }
+
+  render() {
+    const element = document.createElement(this.tag);
+
+    for (const [key, value] of Object.entries(this.props)) {
+      element.setAttribute(key, value);
+    }
+
+    if (Array.isArray(this.children)) {
+      this.children.forEach(child => {
+        if (child instanceof VNode) {
+          element.appendChild(child.render());
+        } else {
+          element.appendChild(document.createTextNode(child));
+        }
+      });
+    }
+
+
+    return element;
+  }
+}
+
 // Password Strength Checker:
 // This function checks the strength of a password based on specified criteria, such as length, the presence of uppercase letters, lowercase letters, numbers, and special characters.
 
