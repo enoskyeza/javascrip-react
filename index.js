@@ -815,3 +815,7 @@ function customPromiseAll(promises) {
 const promise1 = new Promise((resolve) => setTimeout(() => resolve('First'), 1000));
 const promise2 = new Promise((resolve) => setTimeout(() => resolve('Second'), 2000));
 const promise3 = new Promise((resolve) => setTimeout(() => resolve('Third'), 3000));
+
+customPromiseAll([promise1, promise2, promise3])
+  .then(results => console.log(results)) // Output after 3 seconds: ['First', 'Second', 'Third']
+  .catch(error => console.log(error));
