@@ -806,5 +806,8 @@ function customPromiseAll(promises) {
         });
     }
 
+    if (promises.length === 0) {
+      resolve(results);
+    }
   });
 }
