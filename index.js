@@ -785,3 +785,7 @@ console.log(checkPasswordStrength('123456'));
 /*
 The customPromiseAll function takes an array of promises and returns a new promise. It resolves when all the input promises have resolved, or rejects if any of the input promises reject.
 */
+
+function customPromiseAll(promises) {
+  pass
+}
