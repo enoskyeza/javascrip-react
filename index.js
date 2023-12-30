@@ -722,7 +722,7 @@ notify method notifies all observers when there is a change, passing the data to
 This is a simplified version of the observer pattern in JavaScript. You can further expand it to handle various types of data updates, error handling, and more complex scenarios based on your requirements.
 */
 
-// Create a custome DOM
+// Create a custom DOM
 
 class VNode {
   constructor(tag, props, children) {
@@ -781,3 +781,41 @@ console.log(checkPasswordStrength('Passw0rd!'));
 console.log(checkPasswordStrength('password123'));
 console.log(checkPasswordStrength('123456'));
 
+// Implement Your Own Promise.all():
+/*
+The customPromiseAll function takes an array of promises and returns a new promise. It resolves when all the input promises have resolved, or rejects if any of the input promises reject.
+*/
+
+function customPromiseAll(promises) {
+  return new Promise((resolve, reject) => {
+    const results = [];
+    let completed = 0;
+
+    for (let i = 0; i < promises.length; i++) {
+      promises[i]
+        .then(result => {
+          results[i] = result;
+          completed++;
+
+          if (completed === promises.length) {
+            resolve(results);
+          }
+        })
+        .catch(error => {
+          reject(error);
+        });
+    }
+
+    if (promises.length === 0) {
+      resolve(results);
+    }
+  });
+}
+
+const promise1 = new Promise((resolve) => setTimeout(() => resolve('First'), 1000));
+const promise2 = new Promise((resolve) => setTimeout(() => resolve('Second'), 2000));
+const promise3 = new Promise((resolve) => setTimeout(() => resolve('Third'), 3000));
+
+customPromiseAll([promise1, promise2, promise3])
+  .then(results => console.log(results)) // Output after 3 seconds: ['First', 'Second', 'Third']
+  .catch(error => console.log(error));
