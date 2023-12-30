@@ -787,5 +787,8 @@ The customPromiseAll function takes an array of promises and returns a new promi
 */
 
 function customPromiseAll(promises) {
-  pass
+  return new Promise((resolve, reject) => {
+    const results = [];
+    let completed = 0;
+  });
 }
