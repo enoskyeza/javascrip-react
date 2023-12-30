@@ -790,5 +790,21 @@ function customPromiseAll(promises) {
   return new Promise((resolve, reject) => {
     const results = [];
     let completed = 0;
+
+    for (let i = 0; i < promises.length; i++) {
+      promises[i]
+        .then(result => {
+          results[i] = result;
+          completed++;
+
+          if (completed === promises.length) {
+            resolve(results);
+          }
+        })
+        .catch(error => {
+          reject(error);
+        });
+    }
+
   });
 }
